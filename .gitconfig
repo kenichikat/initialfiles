@@ -1,5 +1,11 @@
 [user]
 	name = Kenichi Kato
 	email = k3nichikato@gmail.com
+[color]
+    status = auto
+    diff = auto
+    interactive = auto
+    grep =auto
 [core]
-	editor = vim
+    editor = vim
+    autocrlf = input
