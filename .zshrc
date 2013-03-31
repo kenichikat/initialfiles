@@ -30,3 +30,6 @@ alias rm="rm -i"
 alias e="emacs"
 alias t="tmux"
 
+# Python
+# pythonbrew
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
