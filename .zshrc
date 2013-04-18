@@ -1,3 +1,7 @@
+# if there is not tmux session.excute tmux.
+echo "Cheking tmux session. see below."
+tmux list-session || tmux
+
 # zsh specify configuration
 bindkey -e
 
@@ -33,3 +37,7 @@ alias t="tmux"
 # Python
 # pythonbrew
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+
+# Perl
+# perlbrew
+[[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
