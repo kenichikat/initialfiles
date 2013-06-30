@@ -31,7 +31,6 @@ export LANG=en_US.UTF-8
 alias ll="ls -l"
 alias la="ls -la"
 alias rm="rm -i"
-alias e="emacs"
 alias t="tmux"
 
 # Python
