@@ -34,15 +34,18 @@ alias rm="rm -i"
 alias t="tmux"
 
 # Python
-# pythonbrew
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
-
 # pythonz
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
 # virtulenv / virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+os=`uname`
+if [ $os = "Darwin" ];then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+else
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+fi
 export WORKON_HOME=$HOME/.virtualenvs
 source `which virtualenvwrapper.sh`
 
