@@ -1,6 +1,11 @@
+
+os=`uname`
+
 # if there is not tmux session.excute tmux.
-echo "Cheking tmux session. see below."
-tmux list-session || tmux
+if [ $os = "Darwin" ];then
+    echo "Cheking tmux session. see below."
+    tmux list-session || tmux
+fi
 
 # zsh specify configuration
 bindkey -e
@@ -38,7 +43,6 @@ alias t="tmux"
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
 # virtulenv / virtualenvwrapper
-os=`uname`
 if [ $os = "Darwin" ];then
     export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
