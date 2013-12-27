@@ -1,6 +1,8 @@
 
 os=`uname`
 
+export PATH=/usr/local/bin:$PATH
+
 # if there is not tmux session.excute tmux.
 if [ $os = "Darwin" ];then
     echo "Cheking tmux session. see below."
