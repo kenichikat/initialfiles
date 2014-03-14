@@ -5,7 +5,7 @@ os=`uname`
 if [ $os = "Darwin" ];then
     export PATH=/usr/local/bin:$PATH
     echo "Cheking tmux session. see below."
-    tmux list-session || tmux
+    tmux list-session 2> /dev/null || tmux
 fi
 
 # zsh specify configuration
@@ -40,20 +40,10 @@ alias rm="rm -i"
 alias t="tmux"
 
 # Python
-# pythonz
-[[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
-
-# virtulenv / virtualenvwrapper
-if [ $os = "Darwin" ];then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-else
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
-fi
-export WORKON_HOME=$HOME/.virtualenvs
-source `which virtualenvwrapper.sh`
-
+which pyenv > /dev/null && eval "$(pyenv init -)"
+# Ruby
+which rbenv > /dev/null && eval "$(rbenv init -)"
+# php
+export PATH=$HOME/.phpenv/bin:$PATH
+which phpenv > /dev/null && eval "$(phpenv init -)"
 # Perl
-# perlbrew
-[[ -s $HOME/perl5/perlbrew/etc/bashrc ]] && source $HOME/perl5/perlbrew/etc/bashrc
