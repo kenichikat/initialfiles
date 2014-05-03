@@ -53,8 +53,9 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config={'*': {'split': ''}}
 set splitbelow
