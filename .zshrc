@@ -39,10 +39,12 @@ alias la="ls -la"
 alias rm="rm -i"
 alias t="tmux"
 
-# Python
-which pyenv > /dev/null && eval "$(pyenv init -)"
 # Ruby
+export PATH=$HOME/.rbenv/bin:$PATH
 which rbenv > /dev/null && eval "$(rbenv init -)"
+# Python
+export PATH=$HOME/.pyenv/bin:$PATH
+which pyenv > /dev/null && eval "$(pyenv init -)"
 # php
 export PATH=$HOME/.phpenv/bin:$PATH
 which phpenv > /dev/null && eval "$(phpenv init -)"
