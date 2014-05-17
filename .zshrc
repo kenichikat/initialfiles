@@ -49,3 +49,8 @@ which pyenv > /dev/null && eval "$(pyenv init -)"
 export PATH=$HOME/.phpenv/bin:$PATH
 which phpenv > /dev/null && eval "$(phpenv init -)"
 # Perl
+export PATH=$HOME/.plenv/bin:$PATH
+which plenv > /dev/null && eval "$(plenv init -)"
+
+# awscli
+export AWS_CONFIG_FILE=$HOME/.awsrc
