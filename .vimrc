@@ -57,8 +57,9 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
-let g:quickrun_config={'*': {'split': ''}}
+let g:quickrun_config={'_': {'split': ''}}
 set splitbelow
+set splitright
 
 NeoBundleCheck
 filetype plugin indent on
