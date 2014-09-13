@@ -3,6 +3,11 @@ os=`uname`
 
 # if there is not tmux session.excute tmux.
 if [ $os = "Darwin" ];then
+    # java
+    export JAVA_HOME=/Library/java/JavaVirtualMachines/current.jdk/Contents/Home
+    export PATH=$JAVA_HOME/bin:$PATH
+
+    # homebrew
     export PATH=/usr/local/bin:$PATH
     echo "Cheking tmux session. see below."
     tmux list-session 2> /dev/null || tmux
@@ -45,6 +50,7 @@ alias la="ls -Gla"
 alias rm="rm -i"
 alias t="tmux"
 
+
 # Ruby
 export PATH=$HOME/.rbenv/bin:$PATH
 which rbenv > /dev/null && eval "$(rbenv init -)"
@@ -60,3 +66,7 @@ which plenv > /dev/null && eval "$(plenv init -)"
 
 # awscli
 export AWS_CONFIG_FILE=$HOME/.awsrc
+
+# docker
+export DOCKER_HOST=tcp://localhost:2375
+
