@@ -57,9 +57,6 @@ which rbenv > /dev/null && eval "$(rbenv init -)"
 # Python
 export PATH=$HOME/.pyenv/bin:$PATH
 which pyenv > /dev/null && eval "$(pyenv init -)"
-# php
-export PATH=$HOME/.phpenv/bin:$PATH
-which phpenv > /dev/null && eval "$(phpenv init -)"
 # Perl
 export PATH=$HOME/.plenv/bin:$PATH
 which plenv > /dev/null && eval "$(plenv init -)"
