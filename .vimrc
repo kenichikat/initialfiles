@@ -57,6 +57,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'scrooloose/nerdtree'
 let g:quickrun_config={'_': {'split': ''}}
 set splitbelow
 set splitright
