@@ -16,6 +16,7 @@ set directory=~/.vim/tmp
 
 " view
 syntax on
+colorscheme desert
 set cursorline
 set number
 set showmatch
