@@ -53,13 +53,13 @@ alias t="tmux"
 
 # Ruby
 export PATH=$HOME/.rbenv/bin:$PATH
-which rbenv > /dev/null && eval "$(rbenv init -)"
+which rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
 # Python
 export PATH=$HOME/.pyenv/bin:$PATH
-which pyenv > /dev/null && eval "$(pyenv init -)"
+which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
 # Perl
 export PATH=$HOME/.plenv/bin:$PATH
-which plenv > /dev/null && eval "$(plenv init -)"
+which plenv > /dev/null 2>1&1 && eval "$(plenv init -)"
 
 # awscli
 export AWS_CONFIG_FILE=$HOME/.awsrc
