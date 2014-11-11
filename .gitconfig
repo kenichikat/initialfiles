@@ -1,6 +1,11 @@
 [user]
 	name = Kenichi Kato
 	email = k3nichikato@gmail.com
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
 [color]
     status = auto
     diff = auto
