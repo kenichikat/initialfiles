@@ -59,7 +59,7 @@ export PATH=$HOME/.pyenv/bin:$PATH
 which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
 # Perl
 export PATH=$HOME/.plenv/bin:$PATH
-which plenv > /dev/null 2>1&1 && eval "$(plenv init -)"
+which plenv > /dev/null 2>&1 && eval "$(plenv init -)"
 
 # awscli
 export AWS_CONFIG_FILE=$HOME/.awsrc
