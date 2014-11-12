@@ -11,6 +11,7 @@
     diff = auto
     interactive = auto
     grep =auto
+	ui = auto
 [core]
     editor = vim
     autocrlf = input
