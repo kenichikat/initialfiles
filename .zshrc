@@ -16,8 +16,8 @@ fi
 # zsh specify configuration
 bindkey -e
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+_cache_hosts=`test -f ~/.ssh/known_hosts && cat ~/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1 `
 
 PROMPT="%m:%n%% "
 RPROMPT="[%~]"
