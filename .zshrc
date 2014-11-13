@@ -16,7 +16,11 @@ fi
 # zsh specify configuration
 bindkey -e
 
-_cache_hosts=`test -f ~/.ssh/known_hosts && cat ~/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1 `
+function gen_hosts_completion(){
+    test -f ~/.ssh/known_hosts && cat ~/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1
+}
+_cache_hosts=($(gen_hosts_completion))
+
 autoload -Uz compinit && compinit
 
 PROMPT="%m:%n%% "
