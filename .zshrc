@@ -16,10 +16,10 @@ fi
 # zsh specify configuration
 bindkey -e
 
-function gen_hosts_completion(){
-    test -f ~/.ssh/known_hosts && cat ~/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1
-}
-_cache_hosts=($(gen_hosts_completion))
+#function gen_hosts_completion(){
+#    test -f ~/.ssh/known_hosts && cat ~/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1
+#}
+#_cache_hosts=($(gen_hosts_completion))
 
 autoload -Uz compinit && compinit
 
@@ -67,7 +67,4 @@ which plenv > /dev/null 2>&1 && eval "$(plenv init -)"
 
 # awscli
 export AWS_CONFIG_FILE=$HOME/.awsrc
-
-# docker
-export DOCKER_HOST=tcp://localhost:2375
 
