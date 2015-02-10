@@ -68,6 +68,3 @@ which phpenv > /dev/null 2>&1 && eval "$(phpenv init -)"
 export PATH=$HOME/.plenv/bin:$PATH
 which plenv > /dev/null 2>&1 && eval "$(plenv init -)"
 
-# awscli
-export AWS_CONFIG_FILE=$HOME/.awsrc
-
