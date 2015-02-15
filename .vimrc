@@ -53,7 +53,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Plugins.
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc',{'build' : {'mac' : 'make -f make_mac.mak', 'unix' : 'make -f make_unix.mak'}}
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/emmet-vim'
@@ -67,7 +66,5 @@ set splitbelow
 set splitright
 
 filetype plugin indent on
-
-
 
 
