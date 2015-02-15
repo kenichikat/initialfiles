@@ -48,7 +48,7 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Plugins.
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -59,11 +59,13 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundleCheck
+call neobundle#end()
+
 let g:quickrun_config={'_': {'split': ''}}
 set splitbelow
 set splitright
 
-NeoBundleCheck
 filetype plugin indent on
 
 
