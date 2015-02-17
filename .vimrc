@@ -53,18 +53,16 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Plugins.
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc',{'build' : {'mac' : 'make -f make_mac.mak', 'unix' : 'make -f make_unix.mak'}}
-NeoBundle 'Shougo/neosnippet'
+NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'scrooloose/nerdtree'
+let g:quickrun_config={'_': {'split': ''}}
+set splitbelow
 NeoBundleCheck
 call neobundle#end()
 
-let g:quickrun_config={'_': {'split': ''}}
-set splitbelow
-set splitright
 
 filetype plugin indent on
-
+colorscheme desert
 
