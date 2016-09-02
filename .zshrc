@@ -54,17 +54,10 @@ alias la="ls -Gla"
 alias rm="rm -i"
 alias t="tmux"
 
-
 # Ruby
 export PATH=$HOME/.rbenv/bin:$PATH
 which rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
 # Python
 export PATH=$HOME/.pyenv/bin:$PATH
 which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
-# PHP
-export PATH=$HOME/.phpenv/bin:$PATH
-which phpenv > /dev/null 2>&1 && eval "$(phpenv init -)"
-# Perl
-export PATH=$HOME/.plenv/bin:$PATH
-which plenv > /dev/null 2>&1 && eval "$(plenv init -)"
 
