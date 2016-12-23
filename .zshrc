@@ -1,26 +1,5 @@
-
-os=`uname`
-
-# if there is not tmux session.excute tmux.
-if [ $os = "Darwin" ];then
-    # java
-    export JAVA_HOME=/Library/java/JavaVirtualMachines/current.jdk/Contents/Home
-    export PATH=$JAVA_HOME/bin:$PATH
-
-    # homebrew
-    export PATH=/usr/local/bin:$PATH
-    echo "Cheking tmux session. see below."
-    tmux list-session 2> /dev/null || tmux
-fi
-
 # zsh specify configuration
 bindkey -e
-
-#function gen_hosts_completion(){
-#    test -f ~/.ssh/known_hosts && cat ~/.ssh/known_hosts | tr ',' ' ' | cut -d' ' -f1
-#}
-#_cache_hosts=($(gen_hosts_completion))
-
 autoload -Uz compinit && compinit
 
 PROMPT="%m:%n%% "
@@ -60,4 +39,14 @@ which rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
 # Python
 export PATH=$HOME/.pyenv/bin:$PATH
 which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
+
+os=`uname`
+if [ $os = "Darwin" ];then
+    # java
+    export JAVA_HOME=/Library/java/JavaVirtualMachines/current.jdk/Contents/Home
+    export PATH=$JAVA_HOME/bin:$PATH
+
+    # homebrew
+    export PATH=/usr/local/bin:$PATH
+fi
 
