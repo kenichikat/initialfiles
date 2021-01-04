@@ -16,7 +16,7 @@ set directory=~/.vim/tmp
 
 " view
 syntax on
-colorscheme desert
+colorscheme industry
 set cursorline
 set number
 set showmatch
@@ -53,17 +53,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Plugins.
 NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc',{'build' : {'mac' : 'make -f make_mac.mak', 'unix' : 'make -f make_unix.mak'}}
-NeoBundle 'scrooloose/nerdtree'
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-NeoBundle 'vim-scripts/gtags.vim'
-map <C-g> :Gtags 
-map <C-h> :Gtags -f %<CR>
-map <C-j> :GtagsCursor<CR>
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'thinca/vim-quickrun'
 let g:quickrun_config={'_': {'split': ''}}
 set splitbelow
 NeoBundleCheck
