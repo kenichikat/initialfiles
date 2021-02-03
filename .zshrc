@@ -39,6 +39,7 @@ which rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
 # Python
 export PATH=$HOME/.pyenv/bin:$PATH
 which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
+which virtualenv > /dev/null 2>&1 && eval "$(pyenv virtualenv-init -)"
 
 os=`uname`
 if [ $os = "Darwin" ];then
