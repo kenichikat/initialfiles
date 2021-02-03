@@ -17,3 +17,7 @@
     autocrlf = input
 [push]
 	default = matching
+[merge]
+	ff = false
+[pull]
+	rebase = true
