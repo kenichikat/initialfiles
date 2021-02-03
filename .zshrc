@@ -32,6 +32,7 @@ alias ll="ls -Gl"
 alias la="ls -Gla"
 alias rm="rm -i"
 alias t="tmux"
+alias tf="terraform"
 
 # Ruby
 export PATH=$HOME/.rbenv/bin:$PATH
