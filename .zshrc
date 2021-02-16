@@ -43,7 +43,12 @@ export PATH=$HOME/.pyenv/bin:$PATH
 which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
 which virtualenv > /dev/null 2>&1 && eval "$(pyenv virtualenv-init -)"
 # node
+export PATH=$HOME/.nodenv/bin:$PATH
 which nodenv > /dev/null 2>&1 && eval "$(nodenv init -)"
+# go
+export PATH=$HOME/.goenv/bin:$PATH
+which goenv > /dev/null 2>&1 && eval "$(goenv init -)"
+
 
 os=`uname`
 if [ $os = "Darwin" ];then
