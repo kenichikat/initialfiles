@@ -27,7 +27,6 @@ export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 # aliases
-alias ll="ls -G"
 alias ll="ls -Gl"
 alias la="ls -Gla"
 alias rm="rm -i"
@@ -35,34 +34,10 @@ alias t="tmux"
 alias tf="terraform"
 alias sls="serverless"
 
-# Ruby
-export PATH=$HOME/.rbenv/bin:$PATH
-which rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
+# homebrew
+export PATH=/usr/local/bin:$PATH
+
 # Python
 export PATH=$HOME/.pyenv/bin:$PATH
 which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
 which virtualenv > /dev/null 2>&1 && eval "$(pyenv virtualenv-init -)"
-# node
-export PATH=$HOME/.nodenv/bin:$PATH
-which nodenv > /dev/null 2>&1 && eval "$(nodenv init -)"
-# go
-export PATH=$HOME/.goenv/bin:$PATH
-which goenv > /dev/null 2>&1 && eval "$(goenv init -)"
-
-
-os=`uname`
-if [ $os = "Darwin" ];then
-    # java
-    export JAVA_HOME=/Library/java/JavaVirtualMachines/current.jdk/Contents/Home
-    export PATH=$JAVA_HOME/bin:$PATH
-
-    # homebrew
-    export PATH=/usr/local/bin:$PATH
-fi
-
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/work/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/work/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/work/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/work/google-cloud-sdk/completion.zsh.inc"; fi
