@@ -38,6 +38,6 @@ alias sls="serverless"
 export PATH=/usr/local/bin:$PATH
 
 # Python
-export PATH=$HOME/.pyenv/bin:$PATH
+export PATH=$HOME/.pyenv/shims:$PATH
 which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
 which virtualenv > /dev/null 2>&1 && eval "$(pyenv virtualenv-init -)"
