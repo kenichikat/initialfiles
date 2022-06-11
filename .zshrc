@@ -32,7 +32,6 @@ alias la="ls -Gla"
 alias rm="rm -i"
 alias t="tmux"
 alias tf="terraform"
-alias sls="serverless"
 
 # homebrew
 export PATH=/usr/local/bin:$PATH
