@@ -2,7 +2,7 @@
 bindkey -e
 autoload -Uz compinit && compinit
 
-PROMPT="%% "
+PROMPT='[%n@%m]%% '
 RPROMPT="[%~]"
 SPROMPT="correct: %R -> %r ? " 
 
