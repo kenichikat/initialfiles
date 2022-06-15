@@ -44,3 +44,13 @@ which virtualenv > /dev/null 2>&1 && eval "$(pyenv virtualenv-init -)"
 # Ruby
 export PATH=$HOME/.rbenv/shims:$PATH
 which rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
+
+# node
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# go
+export GOENV_ROOT=$HOME/.goenv
+export PATH=$GOENV_ROOT/bin:$PATH
+which goenv > /dev/null 2>&1 && eval "$(goenv init -)"
