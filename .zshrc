@@ -34,7 +34,7 @@ alias t="tmux"
 alias tf="terraform"
 
 # homebrew
-export PATH=/usr/local/bin:$PATH
+export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
 
 # Python
 export PATH=$HOME/.pyenv/shims:$PATH
