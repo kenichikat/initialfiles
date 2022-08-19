@@ -36,6 +36,10 @@ alias tf="terraform"
 # homebrew
 export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
 
+#direnv
+export EDITOR=vim
+eval "$(direnv hook zsh)"
+
 # Python
 export PATH=$HOME/.pyenv/shims:$PATH
 which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
