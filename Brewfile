@@ -9,7 +9,7 @@ brew "aws-cdk"
 brew "awscli"
 brew "azure-cli"
 brew "direnv"
-brew "docker-compose", link: false
+brew "docker-compose"
 brew "gh"
 brew "git"
 brew "goenv"
