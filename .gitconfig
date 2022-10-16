@@ -15,6 +15,7 @@
 [core]
     editor = vim
     autocrlf = input
+	ignorecase = false
 [push]
 	default = matching
 [merge]
