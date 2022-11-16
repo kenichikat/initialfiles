@@ -1,11 +1,17 @@
-# zsh specify configuration
-bindkey -e
-autoload -Uz compinit && compinit
-
+# prompt
 PROMPT='[%n@%m]%% '
 RPROMPT="[%~]"
 SPROMPT="correct: %R -> %r ? " 
 
+# keybind
+bindkey -d
+bindkey -e
+
+# completion
+autoload -U compinit
+compinit
+
+# history search
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -30,6 +36,7 @@ zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'c
 alias ll="ls -Gl"
 alias la="ls -Gla"
 alias rm="rm -i"
+alias tailf="tail -f"
 alias t="tmux"
 alias tf="terraform"
 
@@ -40,21 +47,21 @@ export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
 export EDITOR=vim
 eval "$(direnv hook zsh)"
 
-# Python
+# pyenv
 export PATH=$HOME/.pyenv/shims:$PATH
 which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
 which virtualenv > /dev/null 2>&1 && eval "$(pyenv virtualenv-init -)"
 
-# Ruby
+# rbenv
 export PATH=$HOME/.rbenv/shims:$PATH
 which rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
 
-# node
+# nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# go
+# goenv
 export GOENV_ROOT=$HOME/.goenv
 export PATH=$GOENV_ROOT/bin:$PATH
 which goenv > /dev/null 2>&1 && eval "$(goenv init -)"
