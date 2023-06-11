@@ -1,4 +1,4 @@
-FILES = .ctags .gitconfig .tmux.conf .vimrc .zshrc login.sql
+FILES = .gitconfig .tmux.conf .vimrc .zshrc login.sql .direnv.rc
 
 all: ln_files
 
