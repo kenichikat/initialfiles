@@ -44,7 +44,7 @@ alias t="tmux"
 alias tf="terraform"
 
 # homebrew
-export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:$PATH
+export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 
 #direnv
 export EDITOR=vim
