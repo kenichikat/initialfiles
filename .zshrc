@@ -50,21 +50,9 @@ export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:
 export EDITOR=vim
 eval "$(direnv hook zsh)"
 
-# pyenv
-export PATH=$HOME/.pyenv/shims:$PATH
-which pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
-which virtualenv > /dev/null 2>&1 && eval "$(pyenv virtualenv-init -)"
-
-# rbenv
-export PATH=$HOME/.rbenv/shims:$PATH
-which rbenv > /dev/null 2>&1 && eval "$(rbenv init -)"
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# goenv
-export GOENV_ROOT=$HOME/.goenv
-export PATH=$GOENV_ROOT/bin:$PATH
-which goenv > /dev/null 2>&1 && eval "$(goenv init -)"
+# asdf
+source "$HOME/.asdf/asdf.sh"
+#  append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+#  initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit

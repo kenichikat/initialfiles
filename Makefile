@@ -1,4 +1,4 @@
-FILES = .gitconfig .tmux.conf .vimrc .zshrc login.sql .direnv.rc
+FILES = .gitconfig .tmux.conf .vimrc .zshrc login.sql .direnvrc .asdfrc
 
 all: ln_files
 
