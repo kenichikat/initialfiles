@@ -1,5 +1,5 @@
 # prompt
-PROMPT='[%n@%m]%% '
+PROMPT='%% '
 RPROMPT="[%~]"
 SPROMPT="correct: %R -> %r ? " 
 
