@@ -54,5 +54,8 @@ eval "$(direnv hook zsh)"
 source "$HOME/.asdf/asdf.sh"
 #  append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
+#  asdf golang
+source ~/.asdf/plugins/golang/set-env.zsh
+
 #  initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
