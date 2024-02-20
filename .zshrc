@@ -56,6 +56,7 @@ source "$HOME/.asdf/asdf.sh"
 fpath=(${ASDF_DIR}/completions $fpath)
 #  asdf golang
 source ~/.asdf/plugins/golang/set-env.zsh
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 #  initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
