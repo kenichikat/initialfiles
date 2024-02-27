@@ -39,9 +39,10 @@ TERM=screen-256color
 alias ll="ls -Gl"
 alias la="ls -Gla"
 alias rm="rm -i"
-alias tailf="tail -f"
+alias lessf="less +F"
 alias t="tmux"
 alias tf="terraform"
+alias cdw="cd ~/work"
 
 # homebrew
 export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
