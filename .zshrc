@@ -28,7 +28,7 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-# for tmux
+# tmux
 TERM=screen-256color
 
 # aliases
@@ -41,9 +41,7 @@ alias tf="terraform"
 alias cdw="cd ~/work"
 
 # homebrew
-if [ -d /opt/homebrew ]; then
-  export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
-fi
+test -d /opt/homebrew && export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
 
 #direnv
 which direnv > /dev/null && export EDITOR=vim && eval "$(direnv hook zsh)"
