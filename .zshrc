@@ -7,10 +7,6 @@ SPROMPT="correct: %R -> %r ? "
 bindkey -d
 bindkey -e
 
-# completion
-autoload -U compinit
-compinit
-
 # history search
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -45,19 +41,20 @@ alias tf="terraform"
 alias cdw="cd ~/work"
 
 # homebrew
-export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+if [ -d /opt/homebrew ]; then
+  export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+fi
 
 #direnv
-export EDITOR=vim
-eval "$(direnv hook zsh)"
+which direnv > /dev/null && export EDITOR=vim && eval "$(direnv hook zsh)"
 
 # asdf
-source "$HOME/.asdf/asdf.sh"
-#  append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
-#  asdf golang
-source ~/.asdf/plugins/golang/set-env.zsh
-export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+if [ -d $HOME/.asdf ]; then
+    source "$HOME/.asdf/asdf.sh"
+    fpath=(${ASDF_DIR}/completions $fpath)
+    source ~/.asdf/plugins/golang/set-env.zsh
+    export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+fi
 
 #  initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
