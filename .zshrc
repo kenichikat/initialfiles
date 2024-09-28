@@ -40,12 +40,13 @@ alias t="tmux"
 alias tf="terraform"
 alias cdw="cd ~/work"
 
-if `uname` == "Darwin"; then
+# macOS
+if [ $(uname) = "Darwin" ]; then
     # homebrew
     test -d /opt/homebrew && export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
     # vscode
     test -d /Applications/Visual\ Studio\ Code.app && export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
-fi 
+fi
 
 # direnv
 which direnv > /dev/null && export EDITOR=vim && eval "$(direnv hook zsh)"
