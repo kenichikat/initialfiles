@@ -55,8 +55,6 @@ which direnv > /dev/null && export EDITOR=vim && eval "$(direnv hook zsh)"
 if [ -d $HOME/.asdf ]; then
     source "$HOME/.asdf/asdf.sh"
     fpath=(${ASDF_DIR}/completions $fpath)
-    source ~/.asdf/plugins/golang/set-env.zsh
-    export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 fi
 
 #  initialise completions with ZSH's compinit
