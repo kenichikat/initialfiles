@@ -40,12 +40,16 @@ alias t="tmux"
 alias tf="terraform"
 alias cdw="cd ~/work"
 
-# macOS
-if [ $(uname) = "Darwin" ]; then
+# PATH
+OS=$(uname)
+if [ ${OS} = "Darwin" ]; then
     # homebrew
     test -d /opt/homebrew && export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
     # vscode
     test -d /Applications/Visual\ Studio\ Code.app && export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+elif [ ${OS} = "Linux" ]; then
+    # snap
+    test -d /snap && export PATH=/snap/bin:$PATH
 fi
 
 # direnv
