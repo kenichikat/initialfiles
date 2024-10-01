@@ -45,6 +45,9 @@ OS=$(uname)
 if [ ${OS} = "Darwin" ]; then
     # homebrew
     test -d /opt/homebrew && export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+    # google-cloud-sdk
+    test -d /opt/homebrew/share/google-cloud-sdk/ && source /opt/homebrew/share/google-cloud-sdk/path.zsh.inc
+    test -d /opt/homebrew/share/google-cloud-sdk/ && source /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc
     # vscode
     test -d /Applications/Visual\ Studio\ Code.app && export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 elif [ ${OS} = "Linux" ]; then
