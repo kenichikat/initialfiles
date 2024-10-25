@@ -64,9 +64,12 @@ if [ -d $HOME/.asdf ]; then
     fpath=(${ASDF_DIR}/completions $fpath)
 fi
 
-# rust
+# asdf rust
 export RUST_WITHOUT=rust-docs
 export RUST_SOURCE=1
+
+# asdf golang
+export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
 #  initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
