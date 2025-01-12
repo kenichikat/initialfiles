@@ -38,6 +38,7 @@ alias rm="rm -i"
 alias lessf="less +F"
 alias t="tmux"
 alias tf="terraform"
+alias beep='afplay /System/Library/Sounds/Ping.aiff'
 alias cdw="cd ~/work"
 
 # PATH
