@@ -1,4 +1,4 @@
-FILES = .gitconfig .tmux.conf .vimrc .zshrc .asdfrc
+FILES = .gitconfig .tmux.conf .vimrc .zshrc .asdfrc .wezterm.lua
 
 all: ln_files
 
