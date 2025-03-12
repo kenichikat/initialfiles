@@ -1,0 +1,7 @@
+theme = catppuccin-mocha
+window-height = 60
+window-width = 220
+background-opacity = 0.80
+background-blur-radius = 0
+macos-titlebar-proxy-icon = hidden
+
