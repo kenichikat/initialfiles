@@ -72,5 +72,8 @@ export RUST_SOURCE=1
 # asdf golang
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
 
-#  initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/ken/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
