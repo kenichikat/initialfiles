@@ -71,6 +71,7 @@ export RUST_SOURCE=1
 
 # asdf golang
 export ASDF_GOLANG_MOD_VERSION_ENABLED=true
+source ${HOME}/.asdf/plugins/golang/set-env.zsh
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/ken/.docker/completions $fpath)
