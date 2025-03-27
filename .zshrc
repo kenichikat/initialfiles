@@ -47,34 +47,28 @@ if [ ${OS} = "Darwin" ]; then
     # homebrew
     test -d /opt/homebrew && export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
     # google-cloud-sdk
-    test -d /opt/homebrew/share/google-cloud-sdk/ && source /opt/homebrew/share/google-cloud-sdk/path.zsh.inc
-    test -d /opt/homebrew/share/google-cloud-sdk/ && source /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc
+    if [ -d /opt/homebrew/share/google-cloud-sdk ]; then
+        source /opt/homebrew/share/google-cloud-sdk/path.zsh.inc
+        source /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc
+    fi
     # vscode
     test -d /Applications/Visual\ Studio\ Code.app && export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+    # Docker Desktop
+    test -d $HOME/.docker && fpath=($HOME/.docker/completions $fpath)
 elif [ ${OS} = "Linux" ]; then
     # snap
     test -d /snap && export PATH=/snap/bin:$PATH
 fi
 
+# asdf
+if [ -d ${ASDF_DATA_DIR:-$HOME/.asdf} ]; then
+    export PATH=${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH
+    fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+fi
+
 # direnv
 which direnv > /dev/null && export EDITOR=vim && eval "$(direnv hook zsh)"
 
-# asdf
-if [ -d $HOME/.asdf ]; then
-    source "$HOME/.asdf/asdf.sh"
-    fpath=(${ASDF_DIR}/completions $fpath)
-fi
-
-# asdf rust
-export RUST_WITHOUT=rust-docs
-export RUST_SOURCE=1
-
-# asdf golang
-export ASDF_GOLANG_MOD_VERSION_ENABLED=true
-source ${HOME}/.asdf/plugins/golang/set-env.zsh
-
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/ken/.docker/completions $fpath)
+# zsh-completions
 autoload -Uz compinit
 compinit
-# End of Docker CLI completions
