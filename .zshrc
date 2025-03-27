@@ -64,6 +64,9 @@ fi
 if [ -d ${ASDF_DATA_DIR:-$HOME/.asdf} ]; then
     export PATH=${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH
     fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
+    # golang
+    test -d  ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang && source ~/.asdf/plugins/golang/set-env.zsh
 fi
 
 # direnv
