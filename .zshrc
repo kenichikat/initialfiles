@@ -53,6 +53,8 @@ if [ ${OS} = "Darwin" ]; then
     fi
     # vscode
     test -d /Applications/Visual\ Studio\ Code.app && export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+    # Antigravity
+    test -d /Users/ken/.antigravity/antigravity/bin && export PATH="/Users/ken/.antigravity/antigravity/bin:$PATH"
     # Docker Desktop
     test -d $HOME/.docker && fpath=($HOME/.docker/completions $fpath)
 elif [ ${OS} = "Linux" ]; then
