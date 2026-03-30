@@ -3,7 +3,9 @@
 	email = k3nichikato@gmail.com
 [alias]
     st = status
-    co = checkout
+    co = "!f() { echo 'checkout is not recommended. use switch/restore' >&2; }; f"
+    sw = switch
+    rs = restore
     br = branch
     ci = commit
 [color]
@@ -15,9 +17,10 @@
 [core]
     editor = vim
     autocrlf = input
-	ignorecase = false
+	ignorecase = true
 [push]
-	default = matching
+	default = simple
+    autoSetupRemote = true
 [merge]
 	ff = false
 [pull]
