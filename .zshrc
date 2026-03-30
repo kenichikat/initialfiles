@@ -76,4 +76,7 @@ which direnv > /dev/null && export EDITOR=vim && eval "$(direnv hook zsh)"
 
 # zsh-completions
 autoload -Uz compinit
-compinit
+test -d "$HOME/.cache/zsh" || mkdir -p "$HOME/.cache/zsh"
+compinit -d "$HOME/.cache/zsh/.zcompdump"
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
