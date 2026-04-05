@@ -63,6 +63,8 @@ elif [ ${OS} = "Linux" ]; then
 fi
 
 # asdf
+# to enable asdf completion, generate the completion file once:
+# asdf completion zsh > ~/.asdf/completions/_asdf
 if [ -d ${ASDF_DATA_DIR:-$HOME/.asdf} ]; then
     export PATH=${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH
     fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
@@ -80,3 +82,9 @@ test -d "$HOME/.cache/zsh" || mkdir -p "$HOME/.cache/zsh"
 compinit -d "$HOME/.cache/zsh/.zcompdump"
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+# aws cli completion
+if command -v aws_completer > /dev/null 2>&1; then
+    autoload -Uz bashcompinit && bashcompinit
+    complete -C "$(command -v aws_completer)" aws
+fi
