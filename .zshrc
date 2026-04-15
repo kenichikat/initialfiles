@@ -88,3 +88,36 @@ if command -v aws_completer > /dev/null 2>&1; then
     autoload -Uz bashcompinit && bashcompinit
     complete -C "$(command -v aws_completer)" aws
 fi
+
+# pnpm
+# Keep pnpm globals isolated per asdf-managed nodejs version.
+set_pnpm_asdf_scope() {
+        command -v asdf > /dev/null 2>&1 || return
+
+        local asdf_dir node_ver pnpm_base
+        asdf_dir="${ASDF_DATA_DIR:-$HOME/.asdf}"
+        node_ver="$(asdf current nodejs 2>/dev/null | awk '$1=="nodejs"{print $2; exit}')"
+
+        if [ -z "$node_ver" ] || [ "$node_ver" = "system" ]; then
+                return
+        fi
+
+        pnpm_base="$asdf_dir/installs/nodejs/$node_ver/.pnpm"
+
+        unset PNPM_HOME
+        export npm_config_global_dir="$pnpm_base/global"
+        export npm_config_global_bin_dir="$pnpm_base/bin"
+
+        mkdir -p "$npm_config_global_dir" "$npm_config_global_bin_dir"
+
+        case ":$PATH:" in
+            *":$npm_config_global_bin_dir:"*) ;;
+            *) export PATH="$npm_config_global_bin_dir:$PATH" ;;
+        esac
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook chpwd set_pnpm_asdf_scope
+add-zsh-hook precmd set_pnpm_asdf_scope
+set_pnpm_asdf_scope
+# pnpm end
