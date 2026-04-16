@@ -3,7 +3,7 @@
 	email = k3nichikato@gmail.com
 [alias]
     st = status
-    co = "!f() { echo 'checkout is not recommended. use switch/restore' >&2; }; f"
+    co = "!f() { echo 'use switch/restore' >&2; }; f"
     sw = switch
     rs = restore
     br = branch
