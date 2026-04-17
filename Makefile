@@ -14,7 +14,9 @@ ln_files: $(FILES)
 		bk_file="$(BK_BASE)/$$i.$(DATE)"; \
 		bk_dir="$$(dirname $$bk_file)"; \
 		mkdir -p $$dest_dir; \
-		mkdir -p $$bk_dir; \
-		test -f $$dest_file && mv $$dest_file $$bk_file; \
-		ln -s $(CURDIR)/$$i $$dest_file; \
+		if test -f "$$dest_file" && test ! -L "$$dest_file"; then \
+			mkdir -p "$$bk_dir"; \
+			mv "$$dest_file" "$$bk_file"; \
+		fi; \
+		ln -sfn "$(CURDIR)/$$i" "$$dest_file"; \
 	done
