@@ -7,7 +7,6 @@ FILES := .gitconfig .tmux.conf .vimrc .zshrc .asdfrc .config/ghostty/config
 all: ln_files
 
 ln_files: $(FILES)
-	echo "test -d $(BK_BASE) || mkdir $(BK_BASE)"
 	for i in $(FILES); do \
 		dest_file="$(DEST_BASE)/$$i"; \
 		dest_dir="$$(dirname $$dest_file)"; \
