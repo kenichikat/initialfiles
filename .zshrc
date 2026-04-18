@@ -121,3 +121,31 @@ add-zsh-hook chpwd set_pnpm_asdf_scope
 add-zsh-hook precmd set_pnpm_asdf_scope
 set_pnpm_asdf_scope
 # pnpm end
+
+# Homebrew: refresh Brewfile after install/uninstall commands.
+typeset -g __brew_bundle_dump_required=0
+typeset -g __brew_bundle_dump_file="/Users/ken/work/initialfiles/Brewfile"
+
+brew_bundle_dump_preexec() {
+    case "$1" in
+        brew\ install*|brew\ uninstall*)
+            __brew_bundle_dump_required=1
+            ;;
+        *)
+            __brew_bundle_dump_required=0
+            ;;
+    esac
+}
+
+brew_bundle_dump_precmd() {
+    local last_status=$?
+
+    if [ "$__brew_bundle_dump_required" -eq 1 ] && [ "$last_status" -eq 0 ]; then
+        command brew bundle dump --describe --force --file="$__brew_bundle_dump_file" >/dev/null 2>&1
+    fi
+
+    __brew_bundle_dump_required=0
+}
+
+add-zsh-hook preexec brew_bundle_dump_preexec
+add-zsh-hook precmd brew_bundle_dump_precmd

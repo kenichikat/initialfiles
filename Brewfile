@@ -91,14 +91,6 @@ brew "nmap"
 brew "openldap"
 # Show ps output as a tree
 brew "pstree"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
-# Tool Command Language
-brew "tcl-tk"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # Tool for downloading RTMP streaming media
@@ -109,6 +101,8 @@ brew "ruby-build"
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
+# Tool Command Language
+brew "tcl-tk"
 # Terminal multiplexer
 brew "tmux"
 # Internet file retriever
