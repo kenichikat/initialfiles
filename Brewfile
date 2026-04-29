@@ -109,6 +109,8 @@ brew "tmux"
 brew "wget"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Terminal-based AI coding assistant
+cask "claude-code"
 # Brings the power of Copilot coding agent directly to your terminal
 cask "copilot-cli"
 # Set of tools to manage resources and applications hosted on Google Cloud
@@ -118,6 +120,7 @@ cask "ghostty"
 # JDK from the Eclipse Foundation (Adoptium)
 cask "temurin@25"
 vscode "amazonwebservices.amazon-q-vscode"
+vscode "anthropic.claude-code"
 vscode "bierner.markdown-mermaid"
 vscode "corschenzi.mermaid-graphical-editor"
 vscode "docker.docker"
