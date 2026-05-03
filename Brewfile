@@ -25,6 +25,8 @@ brew "apr-util"
 brew "asdf"
 # Automatic configure script builder
 brew "autoconf"
+# CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM
+brew "aws-sam-cli"
 # Securely store and access AWS credentials in development environments
 brew "aws-vault"
 # Official Amazon AWS command-line interface
