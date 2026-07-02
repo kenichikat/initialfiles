@@ -3,7 +3,7 @@ DEST_BASE := $(HOME)
 BK_BASE := $(HOME)/initialfiles_backup
 DATE := $(shell date +%Y%m%d%H%M)
 HOSTNAME := $(shell hostname -s)
-FILES := .gitconfig .tmux.conf .vimrc .zshrc .asdfrc .config/ghostty/config .gitconfig.local.$(HOSTNAME)
+FILES := .gitconfig .tmux.conf .vimrc .zshrc .asdfrc .config/ghostty/config .gitconfig.local.sample
 BLOCKFORMULA := apache-spark nmap claude-code ghostty temurin@25 qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault
 
 all: ln_files
@@ -29,9 +29,9 @@ brew_dump:
 
 ln_files:
 	for i in $(FILES); do \
-		dest_file="$(DEST_BASE)/$${i%.$(HOSTNAME)}"; \
+		dest_file="$(DEST_BASE)/$$i"; \
 		dest_dir="$$(dirname $$dest_file)"; \
-		bk_file="$(BK_BASE)/$${i%.$(HOSTNAME)}.$(DATE)"; \
+		bk_file="$(BK_BASE)/$$i.$(DATE)"; \
 		bk_dir="$$(dirname $$bk_file)"; \
 		mkdir -p $$dest_dir; \
 		if test -f "$$dest_file" && test ! -L "$$dest_file"; then \
