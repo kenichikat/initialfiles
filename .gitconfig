@@ -1,6 +1,5 @@
 [user]
 	name = Kenichi KATO
-	email = k3nichikato@gmail.com
 [alias]
     st = status
     co = "!f() { echo 'use switch/restore' >&2; }; f"
@@ -27,3 +26,5 @@
 	rebase = true
 [init]
 	defaultBranch = main
+[include]
+	path = ~/.gitconfig.local
