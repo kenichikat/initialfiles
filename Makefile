@@ -17,7 +17,7 @@ brew_dump:
 		{ \
 			split($$0, a, "\""); n = a[2]; \
 			if (/^npm / || /^vscode /) { \
-				f = "$(CURDIR)/Brewfile.kws7"; \
+				f = "$(CURDIR)/Brewfile.$(HOSTNAME)"; \
 			} else { \
 				f = (n in b) ? "$(CURDIR)/Brewfile.kws7" : "$(CURDIR)/Brewfile.common"; \
 			} \
