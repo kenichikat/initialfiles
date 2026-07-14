@@ -1,8 +1,9 @@
 tap "aws/tap"
 tap "hashicorp/tap"
-tap "homebrew/bundle"
 # Mozilla CA bundle for Python
 brew "certifi"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Display directories as trees (with optional color/HTML output)
@@ -65,14 +66,6 @@ brew "git-filter-repo"
 brew "p11-kit"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
-# Package compiler and linker metadata toolkit
-brew "pkgconf"
-# Asynchronous event library
-brew "libevent"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
 # Bash-tool to store the private data inside a git repo
 brew "git-secret"
 # Smarter Dockerfile linter to validate best practices
@@ -81,6 +74,8 @@ brew "hadolint"
 brew "jq"
 # Network authentication protocol
 brew "krb5"
+# Asynchronous event library
+brew "libevent"
 # Postgres C API library
 brew "libpq"
 # X.Org: X Toolkit Intrinsics library
@@ -91,6 +86,8 @@ brew "nkf"
 brew "nmap"
 # Open source suite of directory software
 brew "openldap"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Show ps output as a tree
 brew "pstree"
 # Generic machine emulator and virtualizer
@@ -107,6 +104,8 @@ brew "shfmt"
 brew "tcl-tk"
 # Terminal multiplexer
 brew "tmux"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Internet file retriever
 brew "wget"
 # General-purpose lossless data-compression library
