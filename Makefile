@@ -4,7 +4,7 @@ BK_BASE := $(HOME)/initialfiles_backup
 DATE := $(shell date +%Y%m%d%H%M)
 HOSTNAME := $(shell hostname -s)
 FILES := .gitconfig .tmux.conf .vimrc .zshrc .asdfrc .config/ghostty/config .gitconfig.local.sample
-BLOCKFORMULA := apache-spark nmap claude-code ghostty temurin@25 qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault
+BLOCKFORMULA := apache-spark nmap claude-code ghostty qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault
 
 all: ln_files
 

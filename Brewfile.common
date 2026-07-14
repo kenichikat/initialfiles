@@ -97,3 +97,5 @@ brew "tmux"
 brew "wget"
 # General-purpose lossless data-compression library
 brew "zlib"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@25"
