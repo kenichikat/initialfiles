@@ -117,6 +117,8 @@ cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@21"
+# JDK from the Eclipse Foundation (Adoptium)
 cask "temurin@25"
 vscode "bierner.markdown-mermaid"
 vscode "corschenzi.mermaid-graphical-editor"

@@ -2,7 +2,6 @@ SHELL = /usr/bin/env bash
 DEST_BASE := $(HOME)
 BK_BASE := $(HOME)/initialfiles_backup
 DATE := $(shell date +%Y%m%d%H%M)
-HOSTNAME := $(shell hostname -s)
 FILES := .gitconfig .tmux.conf .vimrc .zshrc .asdfrc .config/ghostty/config .gitconfig.local.sample
 BLOCKFORMULA := apache-spark nmap claude-code ghostty qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault
 
@@ -17,9 +16,9 @@ brew_dump:
 		{ \
 			split($$0, a, "\""); n = a[2]; \
 			if (/^npm / || /^vscode /) { \
-				f = "$(CURDIR)/Brewfile.$(HOSTNAME)"; \
+				f = "$(CURDIR)/Brewfile.add"; \
 			} else { \
-				f = (n in b) ? "$(CURDIR)/Brewfile.kws7" : "$(CURDIR)/Brewfile.common"; \
+				f = (n in b) ? "$(CURDIR)/Brewfile.add" : "$(CURDIR)/Brewfile.common"; \
 			} \
 			if (c) print c > f; \
 			print $$0 > f; \
