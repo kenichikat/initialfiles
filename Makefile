@@ -3,7 +3,7 @@ DEST_BASE := $(HOME)
 BK_BASE := $(HOME)/initialfiles_backup
 DATE := $(shell date +%Y%m%d%H%M)
 FILES := .gitconfig .tmux.conf .vimrc .zshrc .asdfrc .config/ghostty/config .gitconfig.local.sample
-BLOCKFORMULA := apache-spark nmap claude-code ghostty qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault
+BLOCKFORMULA := apache-spark nmap claude-code ghostty qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault ollama
 
 all: ln_files
 

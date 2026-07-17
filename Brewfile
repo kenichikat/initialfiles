@@ -84,6 +84,8 @@ brew "libxt"
 brew "nkf"
 # Port scanning utility for large networks
 brew "nmap"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
 # Open source suite of directory software
 brew "openldap"
 # Package compiler and linker metadata toolkit

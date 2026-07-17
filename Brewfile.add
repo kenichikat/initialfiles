@@ -10,6 +10,8 @@ brew "awscli"
 brew "azure-cli"
 # Port scanning utility for large networks
 brew "nmap"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # Terminal-based AI coding assistant
