@@ -1,0 +1,75 @@
+{
+    "explorer.confirmDelete": false,
+    "emmet.triggerExpansionOnTab": true,
+    "explorer.confirmDragAndDrop": false,
+    "redhat.telemetry.enabled": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.inlineSuggest.enabled": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": true
+    },
+    "terminal.external.osxExec": "/opt/homebrew/bin/ghostty",
+    "workbench.startupEditor": "none",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "git.openRepositoryInParentFolders": "never",
+    "github.copilot.advanced": {},
+    "docker.commands.composeDown": [
+        {
+            "label": "Compose Down",
+            "template": "${composeCommand} ${configurationFile} down"
+        }
+    ],
+    "workbench.settings.applyToAllProfiles": [],
+    "python.analysis.diagnosticSeverityOverrides": {
+
+    },
+    "emmet.syntaxProfiles": {},
+    "extensions.ignoreRecommendations": true,
+    "workspaceExplorer.workspaceStorageDirectory": "/Users/ken/work/_workspaces",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "files.insertFinalNewline": true,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "makefile.configureOnOpen": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "flake8.args": [
+        "--ignore=E501"
+    ],
+    "cline.preferredLanguage": "Japanese - 日本語",
+    "amazonQ.suppressPrompts": {
+        "amazonQChatDisclaimer": true,
+        "amazonQChatPairProgramming": true
+    },
+    "python.defaultInterpreterPath": "/Users/ken/.asdf/installs/python/3.13.9/bin/python",
+    "containers.commands.composeDown": [
+        {
+            "label": "Compose Down",
+            "template": "${composeCommand} ${configurationFile} down"
+        }
+    ],
+    "docker.extension.enableComposeLanguageServer": false,
+    "http.systemCertificatesNode": true,
+    "geminicodeassist.inlineSuggestions.enableAuto": false,
+    "chat.viewSessions.orientation": "stacked",
+    "git.ignoreMissingGitWarning": true,
+    "salesforcedx-vscode-apex.java.home": "/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home",
+    "docker.extension.dockerEngineAvailabilityPrompt": false,
+    "xml.server.vmargs": "-Xmx1024M",
+    "chat.disableAIFeatures": true,
+    "workbench.panel.defaultLocation": "right",
+    "editor.tabCompletion": "onlySnippets",
+    "[makefile]": {
+      "editor.tabCompletion": "off"
+     }
+}
