@@ -1,6 +1,6 @@
 {
   "Insert today": {
-    "prefix": "today",
+    "prefix": "tdy",
     "body": [
       "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE"
     ]
