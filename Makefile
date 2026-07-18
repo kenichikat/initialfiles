@@ -37,5 +37,5 @@ ln_files:
 			mkdir -p "$$bk_dir"; \
 			mv "$$dest_file" "$$bk_file"; \
 		fi; \
-		ln -sfn "$(CURDIR)/$$i" "$$dest_file"; \
+		ln -sfn "$(CURDIR)/home/$$i" "$$dest_file"; \
 	done
