@@ -1,8 +1,17 @@
 SHELL = /usr/bin/env bash
-DEST_BASE := $(HOME)
-BK_BASE := $(HOME)/initialfiles_backup
+HOME_DIR := $(HOME)
+VSCODE_USER_DIR := $(HOME)/Library/Application Support/Code/User
 DATE := $(shell date +%Y%m%d%H%M)
-FILES := .gitconfig .tmux.conf .vimrc .zshrc .asdfrc .config/ghostty/config .gitconfig.local.sample
+FILES := \
+	home/.gitconfig \
+	home/.tmux.conf \
+	home/.vimrc \
+	home/.zshrc \
+	home/.asdfrc \
+	home/.config/ghostty/config \
+	vscode/settings.json \
+	vscode/keybindings.json \
+	vscode/snippets
 BLOCKFORMULA := apache-spark nmap claude-code qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault ollama
 
 all: ln_files
@@ -27,15 +36,19 @@ brew_dump:
 	$(CURDIR)/Brewfile
 
 ln_files:
-	for i in $(FILES); do \
-		dest_file="$(DEST_BASE)/$$i"; \
-		dest_dir="$$(dirname $$dest_file)"; \
-		bk_file="$(BK_BASE)/$$i.$(DATE)"; \
-		bk_dir="$$(dirname $$bk_file)"; \
-		mkdir -p $$dest_dir; \
-		if test -f "$$dest_file" && test ! -L "$$dest_file"; then \
-			mkdir -p "$$bk_dir"; \
-			mv "$$dest_file" "$$bk_file"; \
+	@for i in $(FILES); do \
+		case "$$i" in \
+			home/*)   dest_base="$(HOME_DIR)";       rel="$${i#home/}"   ;; \
+			vscode/*) dest_base="$(VSCODE_USER_DIR)"; rel="$${i#vscode/}" ;; \
+		esac; \
+		dest_file="$$dest_base/$$rel"; \
+		dest_dir="$$(dirname "$$dest_file")"; \
+		echo "Linking $$i to $$dest_file"; \
+		mkdir -p "$$dest_dir"; \
+		if test -e "$$dest_file" && test ! -L "$$dest_file"; then \
+			mv "$$dest_file" "$$dest_file.$(DATE)"; \
 		fi; \
-		ln -sfn "$(CURDIR)/home/$$i" "$$dest_file"; \
+		ln -sfn "$(CURDIR)/$$i" "$$dest_file"; \
 	done
+	@echo "Copying home/.gitconfig.local.sample to $(HOME_DIR)/.gitconfig.local.sample"
+	@cp "$(CURDIR)/home/.gitconfig.local.sample" "$(HOME_DIR)/.gitconfig.local.sample"
