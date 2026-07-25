@@ -18,10 +18,7 @@ brew "qemu"
 cask "claude-code"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
-# Terminal emulator that uses platform-native UI and GPU acceleration
-cask "ghostty"
 vscode "bierner.markdown-mermaid"
-vscode "corschenzi.mermaid-graphical-editor"
 vscode "docker.docker"
 vscode "esbenp.prettier-vscode"
 vscode "financialforce.lana"
