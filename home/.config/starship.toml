@@ -1,0 +1,15 @@
+# Full config reference: https://starship.rs/config/
+"$schema" = 'https://starship.rs/config-schema.json'
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+
+[cmd_duration]
+min_time = 500
+
+[gcloud]
+disabled = true
+
+[aws]
+disabled = true

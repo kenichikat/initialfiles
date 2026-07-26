@@ -9,6 +9,7 @@ FILES := \
 	home/.zshrc \
 	home/.asdfrc \
 	home/.config/ghostty/config \
+	home/.config/starship.toml \
 	vscode/settings.json \
 	vscode/keybindings.json \
 	vscode/snippets

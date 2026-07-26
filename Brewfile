@@ -102,6 +102,8 @@ brew "ruby-build"
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Tool Command Language
 brew "tcl-tk"
 # Terminal multiplexer

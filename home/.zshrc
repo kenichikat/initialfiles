@@ -1,7 +1,5 @@
 # prompt
-PROMPT='%% '
-RPROMPT="[%~]"
-SPROMPT="correct: %R -> %r ? " 
+SPROMPT="correct: %R -> %r ? "
 
 # keybind
 bindkey -d
@@ -75,6 +73,9 @@ fi
 
 # direnv
 which direnv > /dev/null && export EDITOR=vim && eval "$(direnv hook zsh)"
+
+# starship
+which starship > /dev/null && eval "$(starship init zsh)"
 
 # zsh-completions
 autoload -Uz compinit
