@@ -14,7 +14,17 @@ FILES := \
 	vscode/snippets
 BLOCKFORMULA := apache-spark nmap claude-code qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault ollama
 
-all: ln_files
+all:
+	@read -p "Run brew_bundle? [y/N] " ans; \
+	case "$$ans" in \
+		[yY]*) $(MAKE) brew_bundle ;; \
+		*) echo "Skipping brew_bundle" ;; \
+	esac
+	@$(MAKE) setup
+
+brew_bundle:
+	@command -v brew >/dev/null 2>&1 || { echo "brew command not found" >&2; exit 1; }
+	brew bundle --file=$(CURDIR)/Brewfile.common
 
 brew_dump:
 	brew bundle dump --force --file=$(CURDIR)/Brewfile
@@ -35,7 +45,7 @@ brew_dump:
 		}' \
 	$(CURDIR)/Brewfile
 
-ln_files:
+setup:
 	@for i in $(FILES); do \
 		case "$$i" in \
 			home/*)   dest_base="$(HOME_DIR)";       rel="$${i#home/}"   ;; \
