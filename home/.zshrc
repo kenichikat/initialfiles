@@ -154,3 +154,6 @@ add-zsh-hook precmd brew_bundle_dump_precmd
 if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
   tmux attach || tmux new-session
 fi
+
+
+[ -f ~/.zshrc.local] && source ~/.zshrc.local
