@@ -51,7 +51,7 @@
         "amazonQChatDisclaimer": true,
         "amazonQChatPairProgramming": true
     },
-    "python.defaultInterpreterPath": "/Users/ken/.asdf/installs/python/3.13.9/bin/python",
+    "python.defaultInterpreterPath": "${env:HOME}/.asdf/installs/python/3.13.9/bin/python",
     "containers.commands.composeDown": [
         {
             "label": "Compose Down",
