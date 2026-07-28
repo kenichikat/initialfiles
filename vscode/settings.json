@@ -16,10 +16,7 @@
     "terminal.external.osxExec": "/opt/homebrew/bin/ghostty",
     "workbench.startupEditor": "none",
     "github.copilot.enable": {
-        "*": true,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false
+        "*": false
     },
     "git.openRepositoryInParentFolders": "never",
     "github.copilot.advanced": {},
@@ -39,7 +36,7 @@
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "files.insertFinalNewline": true,
     "editor.unicodeHighlight.invisibleCharacters": false,
-    "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.editor.enableAutoCompletions": false,
     "makefile.configureOnOpen": false,
     "git.autofetch": true,
     "git.confirmSync": false,
