@@ -8,6 +8,8 @@ brew "aws-vault"
 brew "awscli"
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
+# GitHub command-line tool
+brew "gh"
 # Port scanning utility for large networks
 brew "nmap"
 # Create, run, and share large language models (LLMs)
@@ -18,6 +20,7 @@ brew "qemu"
 cask "claude-code"
 # Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
+vscode "anthropic.claude-code"
 vscode "bierner.markdown-mermaid"
 vscode "docker.docker"
 vscode "esbenp.prettier-vscode"

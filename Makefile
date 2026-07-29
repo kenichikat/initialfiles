@@ -13,7 +13,7 @@ FILES := \
 	vscode/settings.json \
 	vscode/keybindings.json \
 	vscode/snippets
-BLOCKFORMULA := apache-spark nmap claude-code qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault ollama
+BLOCKFORMULA := apache-spark nmap claude-code qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault ollama gh
 
 all:
 	@read -p "Run brew_bundle? [y/N] " ans; \
@@ -29,7 +29,7 @@ brew_bundle:
 
 brew_dump:
 	brew bundle dump --force --file=$(CURDIR)/Brewfile
-	rm -f $(CURDIR)/Brewfile.common $(CURDIR)/Brewfile.kws7
+	rm -f $(CURDIR)/Brewfile.common $(CURDIR)/Brewfile.add
 	awk -v blocklist="$(BLOCKFORMULA)" '\
 		BEGIN { n = split(blocklist, arr, " "); for (i=1; i<=n; i++) b[arr[i]] = 1 } \
 		/^#/ { c = $$0; next } \

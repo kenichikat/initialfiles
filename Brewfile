@@ -122,6 +122,7 @@ cask "ghostty"
 cask "temurin@21"
 # JDK from the Eclipse Foundation (Adoptium)
 cask "temurin@25"
+vscode "anthropic.claude-code"
 vscode "bierner.markdown-mermaid"
 vscode "docker.docker"
 vscode "esbenp.prettier-vscode"
