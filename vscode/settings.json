@@ -68,5 +68,6 @@
     "editor.tabCompletion": "onlySnippets",
     "[makefile]": {
       "editor.tabCompletion": "off"
-     }
+    },
+    "claudeCode.preferredLocation": "panel"
 }
