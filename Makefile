@@ -14,6 +14,9 @@ FILES := \
 	vscode/keybindings.json \
 	vscode/snippets
 BLOCKFORMULA := apache-spark nmap claude-code qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault ollama gh
+LOCAL_SAMPLE_FILES := \
+	home/.gitconfig.local \
+	home/.zshrc.local
 VSCODE_SETTINGS_BASE := vscode/settings.base.json
 VSCODE_SETTINGS_LOCAL := vscode/settings.local.json
 VSCODE_SETTINGS_LOCAL_SAMPLE := vscode/settings.local.json.sample
@@ -77,7 +80,9 @@ setup: vscode_gen_settings
 		fi; \
 		ln -sfn "$(CURDIR)/$$i" "$$dest_file"; \
 	done
-	@if [ ! -e "$(CURDIR)/home/.gitconfig.local" ]; then \
-		echo "Creating home/.gitconfig.local from sample (edit it with your local values)"; \
-		cp "$(CURDIR)/home/.gitconfig.local.sample" "$(CURDIR)/home/.gitconfig.local"; \
-	fi
+	@for i in $(LOCAL_SAMPLE_FILES); do \
+		if [ ! -e "$(CURDIR)/$$i" ]; then \
+			echo "Creating $$i from sample (edit it with your local values)"; \
+			cp "$(CURDIR)/$$i.sample" "$(CURDIR)/$$i"; \
+		fi; \
+	done

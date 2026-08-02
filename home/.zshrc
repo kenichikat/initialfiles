@@ -156,4 +156,4 @@ if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
 fi
 
 
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f ~/work/initialfiles/home/.zshrc.local ] && source ~/work/initialfiles/home/.zshrc.local

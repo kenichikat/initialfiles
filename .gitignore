@@ -1,5 +1,6 @@
 .DS_Store
 Brewfile.lock.json
 home/.gitconfig.local
+home/.zshrc.local
 vscode/settings.local.json
 vscode/settings.json
