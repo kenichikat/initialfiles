@@ -28,7 +28,6 @@
     "workbench.settings.applyToAllProfiles": [],
     "workbench.panel.defaultLocation": "right",
     "extensions.ignoreRecommendations": true,
-    "workspaceExplorer.workspaceStorageDirectory": "/Users/ken/work/_workspaces",
 
     // Terminal
     "terminal.external.osxExec": "/opt/homebrew/bin/ghostty",
@@ -88,7 +87,6 @@
     // Other extensions
     "redhat.telemetry.enabled": false,
     "makefile.configureOnOpen": false,
-    "salesforcedx-vscode-apex.java.home": "/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home",
     "xml.server.vmargs": "-Xmx1024M",
     "http.systemCertificatesNode": true
 }

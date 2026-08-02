@@ -14,6 +14,10 @@ FILES := \
 	vscode/keybindings.json \
 	vscode/snippets
 BLOCKFORMULA := apache-spark nmap claude-code qemu aws-sam-cli awscli azure-cli gcloud-cli aws-vault ollama gh
+VSCODE_SETTINGS_BASE := vscode/settings.base.json
+VSCODE_SETTINGS_LOCAL := vscode/settings.local.json
+VSCODE_SETTINGS_LOCAL_SAMPLE := vscode/settings.local.json.sample
+VSCODE_SETTINGS_OUT := vscode/settings.json
 
 all:
 	@read -p "Run brew_bundle? [y/N] " ans; \
@@ -46,7 +50,19 @@ brew_dump:
 		}' \
 	$(CURDIR)/Brewfile
 
-setup:
+vscode_gen_settings:
+	@command -v jq >/dev/null 2>&1 || { echo "jq command not found" >&2; exit 1; }
+	@if [ ! -e "$(CURDIR)/$(VSCODE_SETTINGS_LOCAL)" ]; then \
+		echo "Creating $(VSCODE_SETTINGS_LOCAL) from sample (edit it with your local values)"; \
+		cp "$(CURDIR)/$(VSCODE_SETTINGS_LOCAL_SAMPLE)" "$(CURDIR)/$(VSCODE_SETTINGS_LOCAL)"; \
+	fi
+	@echo "Generating $(VSCODE_SETTINGS_OUT) from $(VSCODE_SETTINGS_BASE) + $(VSCODE_SETTINGS_LOCAL)"
+	@jq -s '.[0] * .[1]' \
+		<(sed -E '/^[[:space:]]*\/\//d' "$(CURDIR)/$(VSCODE_SETTINGS_BASE)") \
+		"$(CURDIR)/$(VSCODE_SETTINGS_LOCAL)" \
+		> "$(CURDIR)/$(VSCODE_SETTINGS_OUT)"
+
+setup: vscode_gen_settings
 	@for i in $(FILES); do \
 		case "$$i" in \
 			home/*)   dest_base="$(HOME_DIR)";       rel="$${i#home/}"   ;; \
@@ -61,5 +77,7 @@ setup:
 		fi; \
 		ln -sfn "$(CURDIR)/$$i" "$$dest_file"; \
 	done
-	@echo "Copying home/.gitconfig.local.sample to $(HOME_DIR)/.gitconfig.local.sample"
-	@cp "$(CURDIR)/home/.gitconfig.local.sample" "$(HOME_DIR)/.gitconfig.local.sample"
+	@if [ ! -e "$(CURDIR)/home/.gitconfig.local" ]; then \
+		echo "Creating home/.gitconfig.local from sample (edit it with your local values)"; \
+		cp "$(CURDIR)/home/.gitconfig.local.sample" "$(CURDIR)/home/.gitconfig.local"; \
+	fi
