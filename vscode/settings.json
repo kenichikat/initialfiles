@@ -1,10 +1,13 @@
 {
-    "explorer.confirmDelete": false,
-    "emmet.triggerExpansionOnTab": true,
-    "explorer.confirmDragAndDrop": false,
-    "redhat.telemetry.enabled": false,
+    // Editor
     "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
     "editor.inlineSuggest.enabled": true,
+    "editor.tabCompletion": "onlySnippets",
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.syntaxProfiles": {},
+
+    // Language-specific
     "[python]": {
         "editor.formatOnType": true
     },
@@ -13,61 +16,79 @@
         "editor.detectIndentation": true,
         "editor.insertSpaces": true
     },
-    "terminal.external.osxExec": "/opt/homebrew/bin/ghostty",
+    "[makefile]": {
+      "editor.tabCompletion": "off"
+    },
+
+    // Files / Explorer / Workbench
+    "files.insertFinalNewline": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
     "workbench.startupEditor": "none",
+    "workbench.settings.applyToAllProfiles": [],
+    "workbench.panel.defaultLocation": "right",
+    "extensions.ignoreRecommendations": true,
+    "workspaceExplorer.workspaceStorageDirectory": "/Users/ken/work/_workspaces",
+
+    // Terminal
+    "terminal.external.osxExec": "/opt/homebrew/bin/ghostty",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+
+    // Git
+    "git.openRepositoryInParentFolders": "never",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.ignoreMissingGitWarning": true,
+
+    // AI assistants / Chat
     "github.copilot.enable": {
         "*": false
     },
-    "git.openRepositoryInParentFolders": "never",
     "github.copilot.advanced": {},
+    "github.copilot.editor.enableAutoCompletions": false,
+    "geminicodeassist.inlineSuggestions.enableAuto": false,
+    "amazonQ.suppressPrompts": {
+        "amazonQChatDisclaimer": true,
+        "amazonQChatPairProgramming": true
+    },
+    "cline.preferredLanguage": "Japanese - 日本語",
+    "claudeCode.preferredLocation": "panel",
+    "chat.viewSessions.orientation": "stacked",
+    "chat.disableAIFeatures": true,
+
+    // Docker / Containers
     "docker.commands.composeDown": [
         {
             "label": "Compose Down",
             "template": "${composeCommand} ${configurationFile} down"
         }
     ],
-    "workbench.settings.applyToAllProfiles": [],
-    "python.analysis.diagnosticSeverityOverrides": {
-
-    },
-    "emmet.syntaxProfiles": {},
-    "extensions.ignoreRecommendations": true,
-    "workspaceExplorer.workspaceStorageDirectory": "/Users/ken/work/_workspaces",
-    "terminal.integrated.enableMultiLinePasteWarning": false,
-    "files.insertFinalNewline": true,
-    "editor.unicodeHighlight.invisibleCharacters": false,
-    "github.copilot.editor.enableAutoCompletions": false,
-    "makefile.configureOnOpen": false,
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    "flake8.args": [
-        "--ignore=E501"
-    ],
-    "cline.preferredLanguage": "Japanese - 日本語",
-    "amazonQ.suppressPrompts": {
-        "amazonQChatDisclaimer": true,
-        "amazonQChatPairProgramming": true
-    },
-    "python.defaultInterpreterPath": "${env:HOME}/.asdf/installs/python/3.13.9/bin/python",
+    "docker.extension.enableComposeLanguageServer": false,
+    "docker.extension.dockerEngineAvailabilityPrompt": false,
     "containers.commands.composeDown": [
         {
             "label": "Compose Down",
             "template": "${composeCommand} ${configurationFile} down"
         }
     ],
-    "docker.extension.enableComposeLanguageServer": false,
-    "http.systemCertificatesNode": true,
-    "geminicodeassist.inlineSuggestions.enableAuto": false,
-    "chat.viewSessions.orientation": "stacked",
-    "git.ignoreMissingGitWarning": true,
-    "salesforcedx-vscode-apex.java.home": "/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home",
-    "docker.extension.dockerEngineAvailabilityPrompt": false,
-    "xml.server.vmargs": "-Xmx1024M",
-    "chat.disableAIFeatures": true,
-    "workbench.panel.defaultLocation": "right",
-    "editor.tabCompletion": "onlySnippets",
-    "[makefile]": {
-      "editor.tabCompletion": "off"
+
+    // Python
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "warning",
+        "reportMissingModuleSource": "none",
+        "reportUnusedImport": "information",
+        "reportSelfClsParameterName": "none",
+        "reportPrivateImportUsage": "none"
     },
-    "claudeCode.preferredLocation": "panel"
+    "python.defaultInterpreterPath": "${env:HOME}/.asdf/installs/python/3.13.9/bin/python",
+    "flake8.args": [
+        "--ignore=E501"
+    ],
+
+    // Other extensions
+    "redhat.telemetry.enabled": false,
+    "makefile.configureOnOpen": false,
+    "salesforcedx-vscode-apex.java.home": "/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home",
+    "xml.server.vmargs": "-Xmx1024M",
+    "http.systemCertificatesNode": true
 }
