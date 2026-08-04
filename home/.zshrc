@@ -43,21 +43,21 @@ alias cdw="cd ~/work"
 OS=$(uname)
 if [ ${OS} = "Darwin" ]; then
     # homebrew
-    test -d /opt/homebrew && export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+    [ -d /opt/homebrew ] && export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
     # google-cloud-sdk
     if [ -d /opt/homebrew/share/google-cloud-sdk ]; then
         source /opt/homebrew/share/google-cloud-sdk/path.zsh.inc
         source /opt/homebrew/share/google-cloud-sdk/completion.zsh.inc
     fi
     # vscode
-    test -d /Applications/Visual\ Studio\ Code.app && export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
+    [ -d /Applications/Visual\ Studio\ Code.app ] && export PATH=$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
     # Antigravity
-    test -d /Users/ken/.antigravity/antigravity/bin && export PATH="/Users/ken/.antigravity/antigravity/bin:$PATH"
+    [ -d $HOME/.antigravity/antigravity/bin ] && export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
     # Docker Desktop
-    test -d $HOME/.docker && fpath=($HOME/.docker/completions $fpath)
+    [ -d $HOME/.docker ] && fpath=($HOME/.docker/completions $fpath)
 elif [ ${OS} = "Linux" ]; then
     # snap
-    test -d /snap && export PATH=/snap/bin:$PATH
+    [ -d /snap ] && export PATH=/snap/bin:$PATH
 fi
 
 # asdf
@@ -68,7 +68,7 @@ if [ -d ${ASDF_DATA_DIR:-$HOME/.asdf} ]; then
     fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 
     # golang
-    test -d  ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang && source ~/.asdf/plugins/golang/set-env.zsh
+    [ -d ${ASDF_DATA_DIR:-$HOME/.asdf}/plugins/golang ] && source ~/.asdf/plugins/golang/set-env.zsh
 fi
 
 # direnv
@@ -79,7 +79,7 @@ which starship > /dev/null && eval "$(starship init zsh)"
 
 # zsh-completions
 autoload -Uz compinit
-test -d "$HOME/.cache/zsh" || mkdir -p "$HOME/.cache/zsh"
+[ -d "$HOME/.cache/zsh" ] || mkdir -p "$HOME/.cache/zsh"
 compinit -d "$HOME/.cache/zsh/.zcompdump"
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -125,7 +125,7 @@ set_pnpm_asdf_scope
 
 # Homebrew: refresh Brewfile after install/uninstall commands.
 typeset -g __brew_bundle_dump_required=0
-typeset -g __brew_bundle_dump_file="/Users/ken/work/initialfiles/Brewfile"
+typeset -g __brew_bundle_dump_file="$HOME/work/initialfiles/Brewfile"
 
 brew_bundle_dump_preexec() {
     case "$1" in
@@ -156,4 +156,4 @@ if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
 fi
 
 
-[ -f ~/work/initialfiles/home/.zshrc.local ] && source ~/work/initialfiles/home/.zshrc.local
+[ -f $HOME/work/initialfiles/home/.zshrc.local ] && source $HOME/work/initialfiles/home/.zshrc.local
