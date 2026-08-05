@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "vscode/settings.base.json": "jsonc"
+        "vscode/settings.base.json": "jsonc",
+        "home/.zshrc.local": "shellscript",
+        "home/.zshrc.local.sample": "shellscript"
     }
 }
