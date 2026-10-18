@@ -2,7 +2,7 @@
 
 # Homebrew: refresh Brewfile after install/uninstall commands.
 # typeset -g __brew_bundle_dump_required=0
-# typeset -g __brew_bundle_dump_file="$HOME/work/initialfiles/Brewfile"
+# typeset -g __brew_bundle_dump_file="$HOME/work/repos/initialfiles/Brewfile"
 #
 # brew_bundle_dump_preexec() {
 #     case "$1" in

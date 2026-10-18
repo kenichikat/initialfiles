@@ -3,7 +3,7 @@ tap "hashicorp/tap"
 # Mozilla CA bundle for Python
 brew "certifi"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
+brew "openssl@3", link: true
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Display directories as trees (with optional color/HTML output)

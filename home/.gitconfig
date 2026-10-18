@@ -33,4 +33,4 @@
 	helper =
 	helper = !gh auth git-credential
 [include]
-	path = ~/work/initialfiles/home/.gitconfig.local
+	path = ~/work/repos/initialfiles/home/.gitconfig.local
