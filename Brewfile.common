@@ -2,8 +2,6 @@ tap "aws/tap"
 tap "hashicorp/tap"
 # Mozilla CA bundle for Python
 brew "certifi"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3", link: true
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Display directories as trees (with optional color/HTML output)
@@ -24,6 +22,8 @@ brew "apr-util"
 brew "asdf"
 # Automatic configure script builder
 brew "autoconf"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3", link: true
 # Bash Automated Testing System
 brew "bats-core"
 # Tool to obtain certs from Let's Encrypt and autoenable HTTPS

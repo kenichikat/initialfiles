@@ -2,8 +2,6 @@ tap "aws/tap"
 tap "hashicorp/tap"
 # Mozilla CA bundle for Python
 brew "certifi"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3", link: true
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Display directories as trees (with optional color/HTML output)
@@ -32,6 +30,8 @@ brew "aws-sam-cli"
 brew "aws-vault"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3", link: true
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
 # Bash Automated Testing System
