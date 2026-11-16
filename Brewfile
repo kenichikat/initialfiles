@@ -24,8 +24,6 @@ brew "apr-util"
 brew "asdf"
 # Automatic configure script builder
 brew "autoconf"
-# CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM
-brew "aws-sam-cli"
 # Securely store and access AWS credentials in development environments
 brew "aws-vault"
 # Official Amazon AWS command-line interface
@@ -169,8 +167,6 @@ vscode "salesforce.salesforcedx-vscode-soql"
 vscode "salesforce.salesforcedx-vscode-ui-preview"
 vscode "salesforce.salesforcedx-vscode-visualforce"
 vscode "salesforce.sfdx-code-analyzer-vscode"
+vscode "sandcastle.vscode-open"
 vscode "tomsaunders-code.workspace-explorer"
 vscode "yzhang.markdown-all-in-one"
-npm "@salesforce/cli"
-npm "corepack"
-npm "vercel"

@@ -44,6 +44,10 @@ OS=$(uname)
 if [ ${OS} = "Darwin" ]; then
     # homebrew
     [ -d /opt/homebrew ] && export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+    # brew bundle dump: skip asdf-managed tools (shims fail under brew's restricted PATH)
+    export HOMEBREW_BUNDLE_DUMP_NO_GO=1
+    export HOMEBREW_BUNDLE_DUMP_NO_UV=1
+    export HOMEBREW_BUNDLE_DUMP_NO_NPM=1
     # google-cloud-sdk
     if [ -d /opt/homebrew/share/google-cloud-sdk ]; then
         source /opt/homebrew/share/google-cloud-sdk/path.zsh.inc
