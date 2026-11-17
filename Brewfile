@@ -110,6 +110,8 @@ brew "tmux"
 brew "wget"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Virtual Audio Driver
+cask "blackhole-2ch"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # Set of tools to manage resources and applications hosted on Google Cloud

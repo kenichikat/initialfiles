@@ -94,6 +94,8 @@ brew "tmux"
 brew "wget"
 # General-purpose lossless data-compression library
 brew "zlib"
+# Virtual Audio Driver
+cask "blackhole-2ch"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # JDK from the Eclipse Foundation (Adoptium)
